@@ -1,10 +1,17 @@
 #!/usr/bin/env bash
-# This script lists current directory contents, showing only the part after the first dash in each filename
+# This script lists filenames in the current directory, stripping the prefix before the first dash if present
 
 for file in *; do
-  # Skip if it's not a regular file
-  if [ -f "$file" ]; then
-    # Extract the part after the first dash, or whole name if no dash
+  # Skip if it's a hidden file
+  [ "${file:0:1}" = "." ] && continue
+
+  # Check if it's a regular file (not directory or special device)
+  [ -f "$file" ] || continue
+
+  # If file contains a dash, strip everything before first dash
+  if [[ "$file" == *-* ]]; then
     echo "${file#*-}"
+  else
+    echo "$file"
   fi
 done

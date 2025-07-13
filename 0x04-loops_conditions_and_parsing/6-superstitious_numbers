@@ -1,21 +1,19 @@
 #!/usr/bin/env bash
-# This script is displaying "Best School" 10 times
+# This script displays numbers from 20 to 1, with special messages for some
+
 COUNTER=20
 while [ $COUNTER -gt 0 ]; do
-  if [ $COUNTER -eq 4 ]
-  then
-    echo $COUNTER
-    echo "bad luck from China"
-  elif [ $COUNTER -eq 9 ]
-  then
-    echo $COUNTER
-    echo "bad luck from Japan"
-  elif [ $COUNTER -eq 17 ]
-  then
-    echo $COUNTER
-    echo "bad luck from Italy"
-  else
-    echo $COUNTER
-  fi
+  echo $COUNTER
+  case $COUNTER in
+    4)
+      echo "bad luck from China"
+      ;;
+    9)
+      echo "bad luck from Japan"
+      ;;
+    17)
+      echo "bad luck from Italy"
+      ;;
+  esac
   COUNTER=$((COUNTER - 1))
 done

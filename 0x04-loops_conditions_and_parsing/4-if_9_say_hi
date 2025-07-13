@@ -4,7 +4,7 @@ COUNTER=10
 while [ $COUNTER -gt 0 ]; do
   if [ $COUNTER -eq 9 ]
   then
-    echo “Hi”
+    echo "Hi"
   else
     echo "Best School"
   fi

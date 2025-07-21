@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-# Stops the highlander script from task 7
-pkill -f 7-highlander

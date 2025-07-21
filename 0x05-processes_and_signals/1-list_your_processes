@@ -1,7 +1,3 @@
 #!/usr/bin/env bash
-# Task: List running processes with USER and full command line
-
-echo "USER"
-ps -eo user,args --no-headers
-
-
+# Display all running processes in a user-friendly hierarchical format
+ps auxf

@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
-# A Bash script that handles SIGTERM and continues running
-
-trap "echo 'I am invincible!!!'" SIGTERM
-
+# Script that handles SIGTERM signal gracefully
+trap "echo I am invincible!!!" SIGTERM
 while true
 do
   echo "To infinity and beyond"
